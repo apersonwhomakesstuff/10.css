@@ -1,0 +1,453 @@
+/* 10.css - Windows 10 UI Library 
+ * A fork of XP.css (https://github.com/botoxparty/XP.css)
+ * This fork maintains the structure and naming conventions of XP.css
+ * while updating the visual style to match Windows 10
+ */
+
+/* Base XP.css wrapper adapted for Windows 10 */
+.xp.win10 {
+  background-color: #f0f0f0;
+  color: #000000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  /* Light theme colors */
+  --surface: #ffffff;
+  --button-face: #e1e1e1;
+  --button-highlight: #ffffff;
+  --button-shadow: #a0a0a0;
+  --window-frame: #e0e0e0;
+  --dialog-blue: #0078d7;
+  --dialog-blue-hover: #006cc1;
+  --dialog-gray: #f0f0f0;
+  --dialog-gray-hover: #e5e5e5;
+  --link-blue: #0066cc;
+  --border-raised-outer: #a0a0a0;
+  --border-raised-inner: #ffffff;
+  --border-sunken-outer: #a0a0a0;
+  --border-sunken-inner: #ffffff;
+  --window-background: #ffffff;
+  --title-bar-background: #f0f0f0;
+  --title-text: #000000;
+  --text: #000000;
+  --text-secondary: #555555;
+  --disabled: #cccccc;
+  --disabled-text: #888888;
+  --input-background: #ffffff;
+  --input-border: #999999;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+.xp.win10.theme-dark {
+  background-color: #202020;
+  color: #ffffff;
+  /* Dark theme colors */
+  --surface: #2d2d2d;
+  --button-face: #333333;
+  --button-highlight: #444444;
+  --button-shadow: #222222;
+  --window-frame: #2d2d2d;
+  --dialog-blue: #0078d7;
+  --dialog-blue-hover: #1a88e0;
+  --dialog-gray: #2d2d2d;
+  --dialog-gray-hover: #3d3d3d;
+  --link-blue: #1a88e0;
+  --border-raised-outer: #444444;
+  --border-raised-inner: #3d3d3d;
+  --border-sunken-outer: #222222;
+  --border-sunken-inner: #2d2d2d;
+  --window-background: #2d2d2d;
+  --title-bar-background: #1f1f1f;
+  --title-text: #ffffff;
+  --text: #ffffff;
+  --text-secondary: #bbbbbb;
+  --disabled: #444444;
+  --disabled-text: #777777;
+  --input-background: #333333;
+  --input-border: #666666;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Focus styles - from XP.css approach */
+.xp.win10 *:focus {
+  outline: 1px solid var(--dialog-blue);
+}
+
+/* Title bar and window controls - improved to match Windows 10 more accurately */
+.xp.win10 .title-bar {
+  background: var(--title-bar-background);
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 32px;
+  user-select: none;
+  border-bottom: 1px solid var(--window-frame);
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.xp.win10 .title-bar-text {
+  color: var(--title-text);
+  font-weight: normal;
+  font-size: 12px;
+  padding-left: 12px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  flex-grow: 1;
+  letter-spacing: 0.02em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.xp.win10 .title-bar-controls {
+  display: flex;
+  height: 100%;
+}
+
+/* Improved title bar controls to better match Windows style */
+.xp.win10 .title-bar-controls button {
+  width: 46px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  display: block;
+  min-width: auto;
+  transition: background-color 0.1s ease;
+}
+
+.xp.win10 .title-bar-controls button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.xp.win10.theme-dark .title-bar-controls button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Refined minimize button to match Windows 10 */
+.xp.win10 .title-bar-controls button[aria-label="Minimize"]:before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  width: 10px;
+  height: 1px;
+  background-color: var(--text);
+}
+
+/* Refined maximize button to match Windows 10 */
+.xp.win10 .title-bar-controls button[aria-label="Maximize"]:before {
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: 18px;
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--text);
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+/* Refined close button to match Windows 10 */
+.xp.win10 .title-bar-controls button[aria-label="Close"]:before,
+.xp.win10 .title-bar-controls button[aria-label="Close"]:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 23px;
+  width: 1.5px;
+  height: 12px;
+  background-color: var(--text);
+}
+
+.xp.win10 .title-bar-controls button[aria-label="Close"]:before {
+  transform: rotate(45deg);
+}
+
+.xp.win10 .title-bar-controls button[aria-label="Close"]:after {
+  transform: rotate(-45deg);
+}
+
+.xp.win10 .title-bar-controls button[aria-label="Close"]:hover {
+  background-color: #e81123;
+}
+
+.xp.win10.theme-dark .title-bar-controls button[aria-label="Close"]:hover {
+  background-color: #e81123;
+}
+
+.xp.win10 .title-bar-controls button[aria-label="Close"]:hover:before,
+.xp.win10 .title-bar-controls button[aria-label="Close"]:hover:after {
+  background-color: white;
+}
+
+/* Add support for active window state */
+.xp.win10 .window.active .title-bar {
+  background: var(--title-bar-active-background, var(--title-bar-background));
+}
+
+/* Colored title bar support - for app-specific colors */
+.xp.win10 .window.colored-title .title-bar {
+  background-color: var(--app-title-color, #0078d7);
+}
+
+.xp.win10 .window.colored-title .title-bar-text {
+  color: white;
+}
+
+.xp.win10 .window.colored-title .title-bar-controls button:before,
+.xp.win10 .window.colored-title .title-bar-controls button:after {
+  background-color: white;
+}
+
+/* Windows - improved styling */
+.xp.win10 .window {
+  background: var(--window-background);
+  border: 1px solid var(--window-frame);
+  border-radius: 2px;
+  box-shadow: 0 4px 25px var(--shadow);
+  display: inline-block;
+  margin-bottom: 16px;
+  width: auto;
+  overflow: hidden;
+}
+
+.xp.win10.theme-dark .window {
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+}
+
+.xp.win10 .window-body {
+  padding: 16px;
+  margin: 0;
+}
+
+/* Buttons - derived from XP.css */
+.xp.win10 button {
+  background: var(--button-face);
+  border: 1px solid var(--button-shadow);
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  min-height: 32px;
+  min-width: 80px;
+  padding: 4px 16px;
+  position: relative;
+  text-align: center;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.xp.win10 button:hover {
+  background: var(--dialog-gray-hover);
+}
+
+.xp.win10 button:active {
+  background: var(--button-shadow);
+}
+
+.xp.win10 button:focus {
+  box-shadow: 0 0 0 1px var(--dialog-blue);
+  outline: none;
+}
+
+.xp.win10 button.default {
+  background: var(--dialog-blue);
+  color: white;
+}
+
+.xp.win10 button.default:hover {
+  background: var(--dialog-blue-hover);
+}
+
+.xp.win10 button:disabled {
+  background: var(--disabled);
+  color: var(--disabled-text);
+  cursor: not-allowed;
+}
+
+/* Form elements - following XP.css patterns */
+.xp.win10 input[type="text"],
+.xp.win10 input[type="password"],
+.xp.win10 input[type="email"],
+.xp.win10 textarea {
+  background: var(--input-background);
+  border: 1px solid var(--input-border);
+  box-sizing: border-box;
+  color: var(--text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  min-height: 30px;
+  padding: 4px 8px;
+  width: 100%;
+}
+
+.xp.win10 input[type="text"]:focus,
+.xp.win10 input[type="password"]:focus,
+.xp.win10 input[type="email"]:focus,
+.xp.win10 textarea:focus {
+  border-color: var(--dialog-blue);
+  box-shadow: 0 0 0 1px var(--dialog-blue);
+  outline: none;
+}
+
+.xp.win10 select {
+  background: var(--input-background);
+  border: 1px solid var(--input-border);
+  box-sizing: border-box;
+  color: var(--text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  height: 32px;
+  padding: 4px 8px;
+  width: 100%;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6" viewBox="0 0 12 6"><path d="M0 0l6 6 6-6z" fill="%23666"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 30px;
+}
+
+.xp.win10 select:focus {
+  border-color: var(--dialog-blue);
+  box-shadow: 0 0 0 1px var(--dialog-blue);
+  outline: none;
+}
+
+/* Checkbox/Radio based on XP.css approach */
+.xp.win10 fieldset {
+  border: 1px solid var(--button-shadow);
+  padding: 16px;
+  margin: 0;
+}
+
+.xp.win10 legend {
+  background: var(--window-background);
+  padding: 0 4px;
+}
+
+.xp.win10 input[type="checkbox"],
+.xp.win10 input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  background: var(--input-background);
+  border: 1px solid var(--input-border);
+  position: relative;
+  vertical-align: middle;
+}
+
+.xp.win10 input[type="checkbox"] {
+  border-radius: 0;
+}
+
+.xp.win10 input[type="radio"] {
+  border-radius: 50%;
+}
+
+.xp.win10 input[type="checkbox"]:checked::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--dialog-blue);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.xp.win10 input[type="radio"]:checked::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--dialog-blue);
+}
+
+.xp.win10 label {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.xp.win10 label input[type="checkbox"],
+.xp.win10 label input[type="radio"] {
+  margin-right: 8px;
+}
+
+/* Progress bar - from XP.css */
+.xp.win10 progress {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid var(--button-shadow);
+  height: 4px;
+  width: 100%;
+  background-color: var(--input-background);
+}
+
+.xp.win10 progress::-webkit-progress-bar {
+  background: var(--input-background);
+}
+
+.xp.win10 progress::-webkit-progress-value,
+.xp.win10 progress::-moz-progress-bar {
+  background: var(--dialog-blue);
+}
+
+/* Dialog - from XP.css */
+.xp.win10 .dialog-box {
+  background: var(--window-background);
+  border: 1px solid var(--window-frame);
+  box-shadow: 0 4px 10px var(--shadow);
+  margin: 32px auto;
+  max-width: 480px;
+  padding: 0;
+}
+
+.xp.win10 .dialog-heading {
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.xp.win10 .message-box {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.xp.win10 .message-box img {
+  margin-right: 16px;
+  width: 32px;
+  height: 32px;
+}
+
+.xp.win10 .message-content h4 {
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.xp.win10 .message-content p {
+  margin: 0;
+}
+
+.xp.win10 .button-group {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.xp.win10 .button-group button {
+  margin-left: 8px;
+}

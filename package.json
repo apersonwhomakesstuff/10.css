@@ -1,0 +1,48 @@
+{
+  "name": "10css",
+  "version": "1.0.0",
+  "description": "Windows 10 UI library - A direct fork of XP.css that transforms the Windows XP styling into Windows 10",
+  "main": "10.css",
+  "style": "10.css",
+  "repository": {
+    "type": "git",
+    "url": "https://websim.com/@1robots123/10-css-windows-10-ui-library"
+  },
+  "keywords": [
+    "css",
+    "windows10",
+    "ui",
+    "win10",
+    "xp.css",
+    "retro",
+    "framework",
+    "nostalgic",
+    "fork"
+  ],
+  "author": "10.css contributors",
+  "license": "MIT",
+  "homepage": "https://websim.com/@1robots123/10-css-windows-10-ui-library",
+  "bugs": {
+    "url": "https://websim.com/@1robots123/10-css-windows-10-ui-library"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.23",
+    "postcss-cli": "^10.1.0"
+  },
+  "scripts": {
+    "build": "postcss 10.css -o dist/10.min.css --use autoprefixer --no-map",
+    "watch": "postcss 10.css -o dist/10.min.css --use autoprefixer --no-map --watch"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "files": [
+    "10.css",
+    "dist/10.min.css",
+    "LICENSE"
+  ]
+}
