@@ -15,5 +15,5 @@ the Windows 10 UI design language.
 ## Installation
 
 ```html
-<link rel="stylesheet" href="https://raw.githubusercontent.com/apersonwhomakesstuff/10.css/refs/heads/main/10.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/apersonwhomakesstuff/10.css@main/10.css">
 
